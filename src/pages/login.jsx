@@ -63,9 +63,6 @@ const Login = () => {
           >
             {loading ? "Signing in..." : "Sign in"}
           </button>
-          <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
-            <p>You can give any email and password combination</p>
-          </div>
         </div>
       </div>
     </div>
