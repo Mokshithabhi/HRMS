@@ -24,6 +24,10 @@ Secure Route Protection — Only authenticated users can access the dashboard.
 
 Employee Directory, Leave Requests, and Profile Page — All powered by mockapi.io dummy data.
 
+Search Functionality — Optimized using debounce to prevent unnecessary API calls.
+
+Data Caching — Implemented to reduce repeated API fetches and improve performance.
+
 Styled with Tailwind CSS for a clean, modern, and fully responsive UI across devices.
 
 State Management handled via React Context API for centralized and efficient data flow.
