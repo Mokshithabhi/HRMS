@@ -57,10 +57,10 @@ const EmployeeDirectory = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="relative">
+        <div className="relative flex-1">
           <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           <select
-            className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
             value={filteredDepartment}
             onChange={(e) => setFilteredDepartment(e.target.value)}
           >
