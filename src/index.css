@@ -14,6 +14,55 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
+html.dark {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+html.dark body {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+/* Light mode styles */
+html:not(.dark) {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+}
+
+html:not(.dark) body {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+}
+
+
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+html {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
+body {
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
 
 .heading{
   @apply px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider;

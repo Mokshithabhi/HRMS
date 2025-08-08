@@ -1,28 +1,18 @@
 import React from "react";
-import {
-  User,
-  Users,
-  Calendar,
-  Settings,
-  Moon,
-  Sun,
-  Search,
-  Filter,
-  Eye,
-  Edit2,
-  Save,
-  X,
-} from "lucide-react";
+import { User, Users, Calendar } from "lucide-react";
 
-const Tab = ({ activeTab, setActiveTab, title, tabKey }) => {
+const Tab = ({ activeTab, setActiveTab, title, tabKey, darkMode }) => {
+  const isActive = activeTab === tabKey;
   return (
     <button
       onClick={setActiveTab}
-      className={`flex items-center p-2 text-sm font-medium rounded border-b-2 ${
-        activeTab === tabKey
-          ? "border-blue-500 text-blue-600 dark:bg-gray-800"
-          : "border-transparent text-gray-500 hover:text-gray-700 dark:bg-gray-800 dark:hover:text-gray-300"
+      className={`flex items-center p-2 text-sm font-medium rounded  border-b-2 transition-colors ${
+        isActive ? "border-blue-500" : "border-gray-300 hover:border-gray-300"
       }`}
+      style={{
+        color: isActive ? "#3b82f6" : darkMode ? "#9ca3af" : "#6b7280",
+        backgroundColor: darkMode ? "#1f2937" : "transparent",
+      }}
     >
       <TabIcons activeTab={tabKey} />
       <span>{title}</span>

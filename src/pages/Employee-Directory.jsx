@@ -5,7 +5,7 @@ import EmpTable from "../components/table";
 import { EmployeeDirectoryUrl } from "../services/url";
 import Loader from "../components/loader";
 
-const EmployeeDirectory = () => {
+const EmployeeDirectory = ({ darkMode }) => {
   const {
     data: employees,
     loading,
@@ -48,20 +48,36 @@ const EmployeeDirectory = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+          <Search
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4"
+            style={{ color: darkMode ? "#9ca3af" : "#6b7280" }}
+          />
           <input
             type="text"
             placeholder="Search employees..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+            className="w-full pl-10 pr-4 py-2 border  rounded-md focus:ring-blue-500 focus:border-blue-500 "
+            style={{
+              backgroundColor: darkMode ? "#1f2937" : "#ffffff",
+              borderColor: darkMode ? "#4b5563" : "#d1d5db",
+              color: darkMode ? "#ffffff" : "#111827",
+            }}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
         <div className="relative flex-1">
-          <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+          <Filter
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4"
+            style={{ color: darkMode ? "#9ca3af" : "#6b7280" }}
+          />
           <select
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+            className="w-full pl-10 pr-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 "
             value={filteredDepartment}
+            style={{
+              backgroundColor: darkMode ? "#1f2937" : "#ffffff",
+              borderColor: darkMode ? "#4b5563" : "#d1d5db",
+              color: darkMode ? "#ffffff" : "#111827",
+            }}
             onChange={(e) => setFilteredDepartment(e.target.value)}
           >
             <option value="">All Departments</option>
@@ -73,7 +89,7 @@ const EmployeeDirectory = () => {
           </select>
         </div>
       </div>
-      <EmpTable data={filteredEmployee} />
+      <EmpTable data={filteredEmployee} darkMode={darkMode} />
     </div>
   );
 };
